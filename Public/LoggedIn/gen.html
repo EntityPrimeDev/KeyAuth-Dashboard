@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTXCheatz Generator</title>
+</head>
+<body>
+    <h1> Generator:</h1>
+    <br>
+    <!-- <button id="clickButton" class="Buttons">Generate</button> -->
+    <p id="message" class="Message"></p>
+    <form class="ContainerHold">
+        <br>
+        <br>
+        <form class="Container">
+            <br>
+            <br>
+            <br>
+            <label>Thanks For Using RTXCheatz The Worlds Best Game Cheating Company!<br><b>This Key Is Valid For 1 Day!</b><b>You Can Generate One Every 24 Hours!</b><br>These Keys Are Allowing You To Login In To The Dashboard And Also<br>Allow You To Use The Cheats And Spoofers!</label>
+            <br>
+            <br>
+            <font>
+                <input id="keyDisplay" type="text" name="key" placeholder="Generating Key..." readonly></input>
+            </font>
+        </form>
+    </form>
+
+    <script src="gen.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1E1E2F;
+            margin: 0; 
+            overflow: hidden;
+            color: #C5C5CB;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 60px;
+            margin-top: 5%;
+        }
+
+        label {
+            color: white;
+            font-size: 15px;
+            margin-left: 2%;
+            text-align: center;
+        }
+        .ContainerHold {
+            width: 950px;
+            height: 400px;
+            align-items: center;
+            text-align: center;
+            margin-left: 25%;
+            background-color: #1E1E2F;
+            border: 1px solid silver;
+            border-radius: 5px;
+        }
+        .Container {
+            background-color: #2f2f3f;
+            margin-top: -10%;
+            width: 850x;
+            height: 200px;
+        }
+        input {
+            text-align: center;
+            margin-left: 5%;
+            font-size: 30px;
+            color: #444444;
+            background-color: #E9ECEF;
+            border: 10px silver;
+            border-radius:3px;
+            
+        }
+
+        .Buttons {
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            background-color: transparent;
+            border: 10px silver;
+            margin-top: 3%;
+            margin-left: 43%;
+        }
+
+        .Message {
+            text-align: center;
+            background-color: white;
+            font-size: 34px;
+        }
+    </style>
+    <script>
+        
+    document.addEventListener("DOMContentLoaded", function () {
+            const message = document.getElementById("keyDisplay");
+            // Check if a cookie with last click time exists
+            const lastClickTime = parseInt(getCookie("lastClickTime"));
+            const currentTime = new Date().getTime();
+            if (!lastClickTime || currentTime - lastClickTime >= 86400000) {
+                        // Allow the click and update the cookie
+                fetchTextAndUpdateMessage();
+                setCookie("lastClickTime", currentTime, 90); // Store for 90 days
+            } else {
+                        // Prevent the click
+                const timeLeft = 86400000 - (currentTime - lastClickTime);
+                const hoursLeft = Math.floor(timeLeft / 3600000);
+                const minutesLeft = Math.floor((timeLeft % 3600000) / 60000);
+                const secondsLeft = Math.floor((timeLeft % 60000) / 1000);
+                message.value = `Slow down! Please wait before generating a new key.`;
+            }
+            // Function to set a cookie
+            function setCookie(name, value, days) {
+                    const expires = new Date();
+                expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+                document.cookie = `${name}=${value};expires=${expires.toUTCString()}`;
+        }
+            // Function to get a cookie
+            function getCookie(name) {
+                    const cookies = document.cookie.split(';');
+                for (const cookie of cookies) {
+                        const [cookieName, cookieValue] = cookie.trim().split('=');
+                    if (cookieName === name) {
+                            return cookieValue;
+                }
+            }
+                return null;
+        }
+            // Function to fetch text from the URL and update the message
+            async function fetchTextAndUpdateMessage() {
+                    try {
+                        const response = await fetch(`https://keyauth.win/api/seller/?sellerkey=55682434b59df3e731efbd94772bc2c2&type=add&expiry=1&mask=****************&level=1&amount=1&format=text`);
+                        if (response.ok) {
+                            const text = await response.text();
+                            message.value = text;
+                        } else {
+                            message.value = "Error fetching data from the URL.";
+                        }
+                } catch (error) {
+                        message.value = "An error occurred while fetching data.";
+                }
+        }
+    });    
+
+
+    </script>
+</body>
+
+</html>

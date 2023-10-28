@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTX - Dash</title>
+    <script src="server.js" type="text"></script>
+</head>
+<body>
+    <p class="LogOut" onclick="location.href='/logout'">Logout</p>
+    <h1 class="Title">RTXCheatz Dashboard</h1>
+
+    <div class="card">
+        <img src="Images/z.png" alt="Avatar" class="avt" style="width:100%">
+        <div class="container">
+          <h4 class="Title2"><b>RTX Cheatz</b></h4>
+          <hr>
+          <button id="Info" class="Info">Information</button>
+          <button id="Products" class="Products">Products</button>
+          <button id="Loader" class="Loader">Loader</button>
+          <br>
+          <button id="Gen" class="Gen" onclick="location.href='/dashboard/generate'">Key/License</button>
+        </div>
+      </div>
+
+      <div class="card2">
+        <div class="container2">
+          <h4 class="Title3_Change" id="tchange"><b></b></h4>
+          <p class="Change" id="change"></p>
+        </div>
+      </div>
+</body>
+<script>
+    const infobutton = document.getElementById("Info");
+    const productsbutton = document.getElementById("Products");
+    const loaderbutton = document.getElementById("Loader");
+    const genbutton = document.getElementById("Gen");
+    const tchange = document.getElementById("tchange");
+    const change = document.getElementById("change");
+    const KeyAuthUserName = document.getElementById("KeyAuthUserName");
+
+    function ChangeLoaderType(bool) {
+      if (bool == true) {
+        change.innerHTML = (
+          `
+          <h4 class="Fortnite">RTXCheatz Fortnite</h4>
+          <button class="loadFortnite" id="loadFortnite">Load</button>
+          <button class="spoofFortnite" id="spoofFortnite">Spoof Game</button>
+
+          <style>
+            .Fortnite {
+              margin-left: 30%;
+              color: #C5C5CB;
+              font-size: 30px;
+            }
+            .loadFortnite {
+              margin-left: 35%;
+              font-size: 20px;
+              background-color: transparent;
+              border: 5px;
+              border-radius: 10px;
+              color: #C5C5CB;
+            }
+            .spoofFortnite {
+              margin-left: 5%;
+              font-size: 20px;
+              background-color: transparent;
+              border: 5px;
+              border-radius: 10px;
+              color: #C5C5CB;
+            }
+          </style>
+          `
+        )
+        const buttonLoadFN = document.getElementById("loadFortnite");
+        const buttonSpoofFN = document.getElementById("spoofFortnite");
+        buttonLoadFN.addEventListener("click", () => {
+          window.location.href = "";
+          window.alert("Please Run The Application Given To You!");
+        });
+        buttonSpoofFN.addEventListener("click", () => {
+          window.location.href = "";
+          window.alert("Please Run The Application Given To You!");
+        });
+      } else if (bool == false){
+        change.innerHTML = (
+          `
+          <h4 class="Fortnite">RTXCheatz BloodHunt</h4>
+          <button class="loadBloodHunt" id="loadBloodHunt">Load</button>
+          <button class="spoofloadBloodHunt" id="spoofloadBloodHunt">Spoof Game</button>
+
+          <style>
+            .Fortnite {
+              margin-left: 30%;
+              color: #C5C5CB;
+              font-size: 30px;
+            }
+            .loadBloodHunt {
+              margin-left: 35%;
+              font-size: 20px;
+              background-color: transparent;
+              border: 5px;
+              border-radius: 10px;
+              color: #C5C5CB;
+            }
+            .spoofloadBloodHunt {
+              margin-left: 5%;
+              font-size: 20px;
+              background-color: transparent;
+              border: 5px;
+              border-radius: 10px;
+              color: #C5C5CB;
+            }
+          </style>
+          `
+        )
+        const buttonLoadBH = document.getElementById("loadBloodHunt");
+        const buttonSpoofBH = document.getElementById("spoofloadBloodHunt");
+        buttonLoadBH.addEventListener("click", () => {
+          window.location.href = "";
+          window.alert("Please Run The Application Given To You!");
+        });
+        buttonSpoofBH.addEventListener("click", () => {
+          window.location.href = "";
+          window.alert("Please Run The Application Given To You!");
+        });
+      }
+    }
+    infobutton.addEventListener("click", function () {
+        document.getElementById("tchange").innerHTML = "Information"
+        document.getElementById("change").innerHTML =  (
+            `
+            <p>Thanks for using <b>RTXCheatz</b> as your offical cheat. This is one of the best cheats on the market and has a <b>0% detection rate.</b><br><br><strong>How To Use:</strong><br><br><b>1. Select A Product Of Your Choice.</b><br><br><b>2. Go To The Loader Page And Click Load.</b><br><br><b>3. It Will Download Something All You Have To Do Is Open It And Wait 1-5 Minutes For It To Display Something.</b><br><br><b>4. After That It Will Say Done And Send You Back To Product Select, After That All You Have To Do Is Open The Game And Click F8.</b><br><br><b>5. Enjoy Cheating.</b></p>
+            <p class="StatusHi" style="font-size: 30px; font-weight: bold">Status:</p>
+            <button id="Status" class="Status" onclick="location.href='https://rtxcheatz.statuspage.io/'" style="background-color: transparent; border: 5px; border-radius: 10px; color: #3498DB; font-size: 20px;">Status</button>
+            `
+        );
+    });
+    productsbutton.addEventListener("click", function () {
+        document.getElementById("tchange").innerHTML = "Products";
+        document.getElementById("change").innerHTML = (
+          `
+          <div class="card6">
+            <img src="Images/hallo.png" alt="Avatar" style="width:100%">
+            <div class="container6">
+              <h4><b>RTXCheatz Fortnite</b></h4>
+              <p>Fully Undetected Fortnite Cheat. Easy To Use, Free And Full With Features!<br><br>Features:<br><br><strong>Aimbot<br>Visuals<br>Exploits<br>Settings</strong><br><br><b>Note: This Product Comes With A Free Spoofer Which Is Not Listed Here!</b></p>
+            </div>
+          </div>
+          <div class="card7">
+            <img src="Images/7rq6b2o.png" alt="Avatar" style="width:100%; height: 138px;">
+            <div class="container7">
+              <h4><b>RTXCheatz BloodHunt</b></h4>
+              <p>Fully Undetected Bloodhunt Cheat. Easy To Use, Free And Full With Features!<br><br>Features:<br><br><strong>Aimbot<br>Visuals<br>Exploits<br>Settings</strong><br><br><b>Note: This Product Comes With A Free Spoofer Which Is Not Listed Here!</b></p>
+            </div>
+          </div>
+
+          <style>
+            .card6 {
+              box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+              border: 1px solid #27293D;
+              transition: 0.3s;
+              width: 250px;
+              height: 500px;
+              border-color: #C5C5CB;
+              border-radius: 8px;
+            }
+
+            .card6:hover {
+              box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+            .container6 {
+              padding: 2px 16px;
+            }
+
+            .card7 {
+              box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+              border: 1px solid #27293D;
+              transition: 0.3s;
+              width: 250px;
+              height: 500px;
+              border-color: #C5C5CB;
+              border-radius: 8px;
+              margin-left: 40%;
+              margin-top: -64%;
+            }
+
+            .card7:hover {
+              box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+            .container7 {
+              padding: 2px 16px;
+            }
+          `
+        );
+    });
+    loaderbutton.addEventListener("click", function () {
+        document.getElementById("tchange").innerHTML = "Loader";
+        document.getElementById("change").innerHTML = (
+          `
+          <button class="load" onclick="ChangeLoaderType(true);">Load Fortnite</button>
+          <button class="load2" onclick="ChangeLoaderType(false);">Load Bloodhunt</button>
+          <style>
+            .load {
+              margin-left: 42%;
+              font-size: 20px;
+              background-color: transparent;
+              border: 5px;
+              border-radius: 10px;
+              color: #C5C5CB;
+            }
+            .load2 {
+              margin-left: 42%;
+              margin-bottom: 20%;
+              font-size: 20px;
+              background-color: transparent;
+              border: 5px;
+              border-radius: 10px;
+              color: #C5C5CB;
+            }
+          </style>
+          `
+        );
+    });
+</script>
+<script>
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/651f25646fcfe87d54b6eed1/1hc0qk476';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+</script>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1E1E2F;
+            margin: 0; 
+            overflow: hidden;
+            color: #C5C5CB;
+        }
+        .Title {
+            margin-left: 5%;
+            margin-top: 3%;
+            font-size: 25px;
+        }
+        .Title3_Change {
+            font-size: 30px;
+            /*margin-left: 35%;*/
+            text-align: center;
+        }
+        .Change {
+          margin-left: 2%;
+        }
+        .card {
+          /* Add shadows to create the "card" effect */
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          transition: 0.3s;
+          width: 250px;
+          height: 820px;
+          background-image: linear-gradient(to top, #D848D3, #B130F6);
+          margin-left:5%;
+          border-radius: 10px;
+        }
+
+        .card2 {
+          /* Add shadows to create the "card" effect */
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          transition: 0.3s;
+          width: 800px;
+          height: 600px;
+          background-color: #27293D;
+          margin-left: 26%;
+          margin-top: -44.8%;
+          border-radius: 10px;
+        }
+        /* On mouse-over, add a deeper shadow */
+        .card:hover {
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        /* Add some padding inside the card container */
+        .container {
+          padding: 2px 16px;
+        }
+        .Info {
+            margin-left: 15%;
+            margin-top: 20%;
+            font-size: 20px;
+            background-color: transparent;
+            border: 5px;
+            border-radius: 10px;
+            color: #C5C5CB;
+        }
+        .Products {
+            margin-left: 15%;
+            margin-top: 50%;
+            font-size: 20px;
+            background-color: transparent;
+            border: 5px;
+            border-radius: 10px;
+            color: #C5C5CB;
+        }
+        .Loader {
+            margin-left: 15%;
+            margin-top: 60%;
+            font-size: 20px;
+            background-color: transparent;
+            border: 5px;
+            border-radius: 10px;
+            color: #C5C5CB;
+        }
+        .Gen {
+            margin-left: 15%;
+            margin-top: 60%;
+            font-size: 20px;
+            background-color: transparent;
+            border: 5px;
+            border-radius: 10px;
+            color: #C5C5CB;
+        }
+        .avt {
+            border-radius: 10px;
+        }
+        .KeyAuthUserName
+        {
+          margin-left: 75%;
+        }
+        .LogOut {
+          margin-left: 95%;
+        }
+</style>
+<script type="text/javascript" src="log.js"></script>
+</html>
